@@ -1,6 +1,7 @@
 import {
   httpResource,
   HttpResourceOptions,
+  HttpResourceRef,
   HttpResourceRequest,
 } from '@angular/common/http';
 import { Injectable, Signal } from '@angular/core';
@@ -19,11 +20,11 @@ export interface ResourceOptions
   providedIn: 'root',
 })
 export class ResourceService<T, R> {
-  getById<T>(
+  getById(
     url: string,
     id: Signal<string | number>,
     options?: ResourceOptions
-  ) {
+  ): HttpResourceRef<T | undefined> {
     return httpResource<T>(() => {
       const request: HttpResourceRequest = {
         url: id() ? `${url}/${id()}` : url,
@@ -35,7 +36,7 @@ export class ResourceService<T, R> {
     });
   }
 
-  getAll(url: string) {
+  getAll(url: string): HttpResourceRef<R[] | undefined> {
     return httpResource<R[]>(() => ({ url }));
   }
 }
