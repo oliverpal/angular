@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UiComponent } from './ui.component';
+import { WidgetComponent } from './widget.component';
 
-describe('UiComponent', () => {
-  let component: UiComponent;
-  let fixture: ComponentFixture<UiComponent>;
+describe('WidgetComponent', () => {
+  let component: WidgetComponent;
+  let fixture: ComponentFixture<WidgetComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UiComponent],
+      imports: [WidgetComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UiComponent);
+    fixture = TestBed.createComponent(WidgetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,11 @@
+<h3>{{ title() }}</h3>
+
+@if(isLoading()){
+<p>Loading...</p>
+} @else {
+<ul>
+  @for(item of dataResource(); track item.id){
+  <li>{{ item?.title }}</li>
+  }
+</ul>
+}
