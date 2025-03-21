@@ -1,13 +1,34 @@
-import { Component } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { ResourceService } from 'libs/services/src/lib/services/resource/resource.service';
+
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+interface PostResponse {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, JsonPipe],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'angular-workspace';
+
+  resourceService = inject(ResourceService<Post, PostResponse>);
+
+  posts = this.resourceService.getAll(
+    'https://jsonplaceholder.typicode.com/posts'
+  );
 }
