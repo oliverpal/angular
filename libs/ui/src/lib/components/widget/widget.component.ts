@@ -1,10 +1,9 @@
 import { Component, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Post } from '@opal/services';
 
 @Component({
   selector: 'ui-widget',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './widget.component.html',
   styleUrl: './widget.component.scss',
 })

@@ -1,0 +1,16 @@
+<div class="basic-page">
+  <header class="basic-page__header">
+    <h1 class="basic-page__title">{{ title() }}</h1>
+    @if (subtitle()) {
+      <p class="basic-page__subtitle">{{ subtitle() }}</p>
+    }
+  </header>
+
+  <main class="basic-page__content">
+    @if (loading()) {
+      <div class="basic-page__loading">Loading...</div>
+    } @else {
+      <ng-content></ng-content>
+    }
+  </main>
+</div>

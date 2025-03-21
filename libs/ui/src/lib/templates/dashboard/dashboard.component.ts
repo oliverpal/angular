@@ -5,6 +5,7 @@ import { Post, PostResponse } from '@opal/services';
 
 @Component({
   selector: 'ui-dashboard',
+  standalone: true,
   imports: [WidgetComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',

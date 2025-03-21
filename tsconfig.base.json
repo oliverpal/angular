@@ -15,9 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-workspace/ui": ["libs/ui/src/index.ts"],
       "@opal/services": ["libs/services/src/index.ts"],
-      "@opal/ui": ["libs/ui/src/index.ts"],
+      "@opal/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

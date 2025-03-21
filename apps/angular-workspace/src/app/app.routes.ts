@@ -4,6 +4,6 @@ export const appRoutes: Route[] = [
   {
     path: '',
     loadComponent: () =>
-      import('@angular-workspace/ui').then((m) => m.DashboardComponent),
+      import('@opal/ui').then((m) => m.DashboardComponent),
   },
 ];
